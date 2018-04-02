@@ -3,10 +3,11 @@ console.log('Starting app.js');
 const fs = require('fs');
 const os = require('os');
 const notes = require('./notes.js');
+const _ = require('lodash');
 
 var user = os.userInfo();
 
-var values = notes.addValues(4, 5);
+var filteredArray = _.uniq();
 
 console.log(values);
 
