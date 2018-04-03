@@ -40,11 +40,22 @@ var listNotes = () => {
 }
 
 var readNote = (title) => {
-  console.log('Reading note', title);
+  var notes = fetchNotes();
+
+  var noteToRead = notes.filter((note) => note.title === title);
+
+  console.log('noteToRead', noteToRead);
+  return noteToRead[0];
 }
 
 var removeNote = (title) => {
-  console.log('Removing note', title);
+  var notes = fetchNotes();
+
+  var filteredNotes = notes.filter((note) => note.title !== title);
+
+  saveNotes(filteredNotes);
+
+  return notes.length !== filteredNotes.length;
 }
 
 module.exports = {
