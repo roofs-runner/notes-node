@@ -1,5 +1,3 @@
-console.log('Starting notes.js...');
-
 const fs = require('fs');
 
 var fetchNotes = () => {
@@ -36,15 +34,13 @@ var addNote = (title, body) => {
 }
 
 var listNotes = () => {
-  console.log('Listing existing notes');
+  return fetchNotes();
 }
 
 var readNote = (title) => {
   var notes = fetchNotes();
 
   var noteToRead = notes.filter((note) => note.title === title);
-
-  console.log('noteToRead', noteToRead);
   return noteToRead[0];
 }
 
